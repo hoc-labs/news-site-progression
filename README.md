@@ -334,7 +334,7 @@ Here's an example of how to use it:
 .footer-container input[type='email'] {
 }
 ```
-###Making the Footer Responsive
+### Making the Footer Responsive
 
 The modifications to the footer are similar to those for the article grid, just changing the default number of columns to be one and increasing it to three when the screen width is greater than 600px.
 
