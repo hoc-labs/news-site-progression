@@ -3,7 +3,7 @@
 We're going to build the front page of a newspaper website. The page will contain a collection of article cards within a grid layout. Each card will be have a photo, topic tag, title, and a brief description.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-wireframe.png)
-## Part 1 - Article Grid
+##Part 1 - Article Grid
 
 Your task for Part 1 of this assignment is to build a grid of article cards.
 
@@ -184,7 +184,7 @@ Now, when the width is less than 600px, there is just one column.
 
 
 <br/>
-## Part 2 - Showcase Article
+##Part 2 - Showcase Article
 
 Your task for Part 1 of this assignment is to build a section to display a showcase article that would link to a feature article. You will get practice using a background image to enable displaying content on top of an image.
 
@@ -249,7 +249,7 @@ The last item we need to add is the button at the bottom of the showcase section
   * add a selector for the button :hover event to change the opacity of the button to .9 when the user hovers over the button. [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover)
 
 <br/>
-## Part 3 - Navigation Bar
+##Part 3 - Navigation Bar
 
 Your task for Part 3 of this assignment is to build a navigation bar that displays a logo along the top, followed by links to topic sections.
 
@@ -283,7 +283,7 @@ We used this in the last exercise to hover over the "Learn More" button on the s
 * create a :hover selector on the `<a>` element within the navigation container.
 
 <br/>
-## Part 4 - Footer
+##Part 4 - Footer
 
 Your task for Part 4 of this assignment is to build a footer that displays three columns of typical information that goes on a footer.
 
