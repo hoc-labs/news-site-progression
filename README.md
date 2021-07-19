@@ -63,7 +63,7 @@ Grids have introduced a new unit, called a fractional unit (FR), that allows you
 The grid-gap property specifies the padding between each of the cells in the grid. These are often referred to as the grid "gutters".
 * Create a gap between the grid elements
 
-###Article Card
+### Article Card
 
 Next, we'll start filling out each article card with an image. Add an `<img>` element to each card. There are six images in the project images folder to use if you don't want to get your own.
 
@@ -83,7 +83,7 @@ To do this, define a CSS selector to be able to target all of the articles in th
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-2.png)
 
-###Topic Pills
+### Topic Pills
 
 Add a topic tag to each article. These are often referred to as "pills".
 
@@ -132,7 +132,7 @@ Here's what the page should look like with the topic pill styles complete.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-5.png)
 
-###Add Card Title/Description
+### Add Card Title/Description
 
 Last, we're going to add a title and description to each card. This is simply adding a header followed by a paragraph element. Typically, we would have the title be a link to the article page, but we're just focusing on the single articles page for now, so we'll leave the href attribute empty. The `<h3>` element has a nice default value, so there's no need for us to change it.
 Copy/Paste the `<h3>` and `<p>` elements into each of the articles in the page.
@@ -151,7 +151,7 @@ Here's what the page should look like with the Title/Descriptions added.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-6.png)
 
-###Making the Grid Responsive
+### Making the Grid Responsive
 
 Currently our Grid is not responsive, meaning that the layout isn't adjusting to accommodate narrower screen sizes. In order to make our grid responsive, we are going to use media queries.
 
@@ -197,7 +197,8 @@ This is what you should be aiming for.
 * give it a class "showcase" so that you can style it.
 
 <br/>
-###Setting A Background Image
+
+### Setting A Background Image
 [Background Image](https://chnn-anne.gitbook.io/html-css/advanced-css/background-image)
 
 The showcase section will have a background image with text and a button layered on top of it. The technique necessary to get the image to be in a layer below the text and buttons is to set it using the CSS background property, instead of inserting an `<img>` element within the HTML page.
@@ -213,7 +214,8 @@ The background property has the following values that we will set:
 ```
 
 <br/>
-###Setting the Showcase Height
+
+### Setting the Showcase Height
 * Set the height to 40vh, which means 40% of the viewport, or visible screen. We are using vh units so that the header is adjusted relative to the other content that is visible on the screen. 
 
 
@@ -231,12 +233,12 @@ Add the HTML content, which includes the topic tag, a title, and a description. 
   </p>
 ```
 
-###Other Styles
+### Other Styles
 * Create some padding around the showcase content 
 * Set the text color to white.
 * Set the width of the `<p>` element within the showcase section to 50% so that the paragraph text doesn't obscure all of the image.
 
-###Adding a "Learn More" Button
+### Adding a "Learn More" Button
 The last item we need to add is the button at the bottom of the showcase section that links to the article. 
 
 * add a `<button>` element at the end of the showcase section with the text "Learn More".
