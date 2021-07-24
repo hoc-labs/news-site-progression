@@ -30,7 +30,7 @@ html {
 * Set the background color to --light-color
 * Set the color of links to --link-color
 * Remove the underline from links
-* Pick a Google Font and import via `<link>` element.
+* Pick a Google Font and import via `<link>` element. [See Google Fonts Topic](https://chnn-anne.gitbook.io/html-css/appendix/google-fonts)
 
 ### Creating a Grid
 There are two components to establishing a grid layout. The parent element that acts as the grid container and the child elements that need to be organized within that container.
@@ -200,7 +200,7 @@ This is what you should be aiming for.
 <br/>
 
 ### Setting A Background Image
-[Background Image](https://chnn-anne.gitbook.io/html-css/advanced-css/background-image)
+[Background Image](https://chnn-anne.gitbook.io/html-css/miscellaneous-topics/background-image)
 
 The showcase section will have a background image with text and a button layered on top of it. The technique necessary to get the image to be in a layer below the text and buttons is to set it using the CSS background property, instead of inserting an `<img>` element within the HTML page.
 
