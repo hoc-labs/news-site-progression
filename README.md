@@ -9,7 +9,8 @@ Your task for Part 1 of this assignment is to build a grid of article cards.
 
 ### Define Default Colors
 
-The starter project contains these pre-defined colors that we'll use throughout the web page.
+The starter project contains these pre-defined colors that we'll use throughout the web page. 
+[MDN CSS Custom Properties Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 ```css
 html {
