@@ -2,10 +2,16 @@
 
 We're going to build the front page of a newspaper website. The page will contain a collection of article cards within a grid layout. Each card will be have a photo, topic tag, title, and a brief description.
 
+The following is a wireframe for the page.
+
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-wireframe.png)
+
+[And here is a link to the finished page.](https://hopeful-kepler-e0ecef.netlify.app/)
 ## Part 1 - Article Grid
 
 Your task for Part 1 of this assignment is to build a grid of article cards.
+
+![](https://raw.githubusercontent.com/hoc-labs/images/main/article-grid.png)
 
 ### Define Default Colors
 
@@ -13,7 +19,7 @@ The starter project contains these pre-defined colors that we'll use throughout 
 [MDN CSS Custom Properties Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 ```css
-html {
+:root {
     --primary-color: #c72727;
     --light-color: #f3f3f3;
     --dark-color: #333;
@@ -30,7 +36,7 @@ html {
 * Set the background color to --light-color
 * Set the color of links to --link-color
 * Remove the underline from links
-* Pick a Google Font and import via `<link>` element. [See Google Fonts Topic](https://chnn-anne.gitbook.io/html-css/appendix/google-fonts)
+* Pick a Google Font and import via `<link>` element. [See Google Fonts Topic](https://chnn-anne.gitbook.io/html-css-fall-2021/appendix/google-fonts)
 
 ### Creating a Grid
 There are two components to establishing a grid layout. The parent element that acts as the grid container and the child elements that need to be organized within that container.
@@ -68,9 +74,9 @@ The grid-gap property specifies the padding between each of the cells in the gri
 
 Next, we'll start filling out each article card with an image. Add an `<img>` element to each card. There are six images in the project images folder to use if you don't want to get your own.
 
-Refresh your page and you'll notice that the images are very large. To fix this, add a style to set the image width to 100%. This will force the image to take up the space of its container.
+Refresh your page and you'll notice that the images are very large. They are displaying with their original size. To fix this, add a style to set the image width to 100%. This will force the image to take up 100% of the width of the parent element.
 
-Your page should now look like this, with your own images substituted.
+Your page should now look like this.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-1.png)
 
@@ -78,9 +84,11 @@ Your page should now look like this, with your own images substituted.
 
 We'd like to add a little styling to make each article card have a frame around it. 
 
-To do this, define a CSS selector to be able to target all of the articles in the section.
-* set the background color of each article to white.
-* set the padding of each article to 16px
+To do this, define a CSS selector to be able to target all of the article cards in the section. 
+
+For each:
+* set the background color to white
+* add a padding to each article card
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-2.png)
 
@@ -93,30 +101,9 @@ Add a topic tag to each article. These are often referred to as "pills".
 
 **Topic Pill HTML**
 
-Add a span to each article element. You will need to create two CSS styles for the topics. The general topic style will set those styles that are common to all the pills. Then, you will also need to define a section-specific topic style to be able to set the section-specific color for the pill.
+You will need to create two CSS styles for the topic pills. The general topic style will set those styles that are common to all the pills. Then, you will also need to define a topic-specific style to be able to set the topic-specific color for the pill.
 
-```html
-<span class="topic topic-science">Science</span>
-```
-
-```css
-.topic-sports {
-  background-color: var(--sports-color);
-}
-.topic-arts {
-  background-color: var(--arts-color);
-}
-.topic-technology {
-  background-color: var(--tech-color);
-}
-.topic-food {
-  background-color: var(--food-color);
-}
-.topic-science {
-  background-color: var(--science-color);
-}
-}
-```
+Try to do it on your own first, but if you need help, see the solution at the end of the document for the topic-specific pill styles.
 
 The topic pill should look like the following with the section-specific CSS style set.
 
@@ -133,14 +120,13 @@ Here's what the page should look like with the topic pill styles complete.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-5.png)
 
-### Add Card Title/Description
+### Add Card Title/Abstract
 
 Last, we're going to add a title and description to each card. This is simply adding a header followed by a paragraph element. Typically, we would have the title be a link to the article page, but we're just focusing on the single articles page for now, so we'll leave the href attribute empty. The `<h3>` element has a nice default value, so there's no need for us to change it.
 Copy/Paste the `<h3>` and `<p>` elements into each of the articles in the page.
 
 ```html
-<h3>
-  <a href="">Lorem ipsum dolor sit amet.</a></h3>
+<h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
     impedit libero, beatae animi provident nesciunt molestias ipsam
@@ -148,7 +134,7 @@ Copy/Paste the `<h3>` and `<p>` elements into each of the articles in the page.
   </p>
 ```
 
-Here's what the page should look like with the Title/Descriptions added.
+Here's what the page should look like with the Title/Abstracts added.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-6.png)
 
@@ -156,23 +142,23 @@ Here's what the page should look like with the Title/Descriptions added.
 
 Currently our Grid is not responsive, meaning that the layout isn't adjusting to accommodate narrower screen sizes. In order to make our grid responsive, we are going to use media queries.
 
-Media queries allow you to specify CSS property values that should be used when different screen widths are detected. Best practice is to start off designing for "mobile-first", and then expanding the content as the screen width increases. So we're going to modify our default CSS properties to be mobile-friendly, and then add media queries to add more content within the screen width when it exceeds 600px.
+Media queries allow you to specify CSS property values that should be used when different screen widths are detected. Best practice is to start off designing for "mobile-first", and then expanding the content as the screen width increases. We built our grid for desktop-first, but we're going to go back and make the default case be mobile-first, and then create a media query to change the layout for wider viewports.
 
 Below is screen capture within the Chrome Developer Tools showing you how to open the screen size viewer to test your media queries.
 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-7.png)
 
 <br/>
-The only change necessary to make our grid responsive is to set the default number of columns in the grid to one as the default and then create a media query to expand the grid to have three columns when the target device is a screen and the width is greater than 600px. The @media query syntax is defined in more detail in the 
+The only change necessary to make our grid responsive is to set the default number of columns in the grid to one as the default and then create a media query to expand the grid to have three columns when the target viewport width is greater than 600px. The media query syntax is defined in more detail in the 
 
 [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 
 * change the default for the grid-template-columns to be a single column.
-* add a @media query block and if the mid-width>=600px, the you change the grid-template-columns to be three columns.
+* add a @media query block and if the mid-width>=600px, then you change the grid-template-columns to be three columns.
 
 ```css
-@media screen and (min-width:600px) {
+@media (min-width:600px) {
   .articles {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -187,7 +173,7 @@ Now, when the width is less than 600px, there is just one column.
 
 ## Part 2 - Showcase Article
 
-Your task for Part 1 of this assignment is to build a section to display a showcase article that would link to a feature article. You will get practice using a background image to enable displaying content on top of an image.
+Your task for Part 2 of this assignment is to build a section to display a showcase article that would link to a feature article. This is known as a **hero** section. You will get practice using a background image to enable displaying content on top of an image.
 
 This is what you should be aiming for.
 
@@ -197,42 +183,23 @@ This is what you should be aiming for.
 * create a `<section>` element immediately above the article section to hold the showcase article.
 * give it a class "showcase" so that you can style it.
 
-<br/>
 
-### Setting A Background Image
-[Background Image](https://chnn-anne.gitbook.io/html-css/miscellaneous-topics/background-image)
+### Setting a Background Image
 
 The showcase section will have a background image with text and a button layered on top of it. The technique necessary to get the image to be in a layer below the text and buttons is to set it using the CSS background property, instead of inserting an `<img>` element within the HTML page.
 
-The background property has the following values that we will set:
-* url(the location of the image)
-* center/cover - cover tells the browser to make sure the image always covers the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
+Read the [Background Image](https://chnn-anne.gitbook.io/html-css-fall-2021/miscellaneous-topics/background-image) topic and then try configuring the background image CSS on your own. There are lots of CSS properties to control different aspects of the image, so it's good spend some time to play around with them to try to understand what each one does.
 
-```css
-.showcase {
-  background: url('../images/robot.jpg') center/cover;
-}
-```
-
-<br/>
+Once you've given it a try, and are still having trouble, look at the solution at the end of this document.
 
 ### Setting the Showcase Height
-* Set the height to 40vh, which means 40% of the viewport, or visible screen. We are using vh units so that the header is adjusted relative to the other content that is visible on the screen. 
+Set the height to 40vh, which means 40% of the viewport, or visible screen. 
 
 
-### Adding the Article Content
-Add the HTML content, which includes the topic tag, a title, and a description. We're going to stick with the default settings for the font size and weight for the text, so we don't need to add any additional CSS.
+### Adding the Article Summary Content
+Add the HTML content, which includes the topic tag, title, and abstract. We're going to stick with the default settings for the font size and weight for the text, so we don't need to add any additional CSS.
 
-```html
-<span class="topic topic-technology">Technology</span>
- <h1>An Article About Technology</h1>
-  <p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-  recusandae consequatur similique doloribus. Corporis, et a ullam
-  praesentium facere veritatis veniam? Aperiam ipsa totam veniam,
-  atque illo sed suscipit accusamus.
-  </p>
-```
+See the solution at the end of the document if you need help.
 
 ### Other Styles
 * Create some padding around the showcase content 
@@ -274,9 +241,10 @@ Unordered list elements (`<ul>`, `<li>`) are used to implement navigation bars b
 
 There are three CSS properties on the list element (`<ul>` or `<ol>`) that must be changed from the defaults to make a list into a navigation bar.
 
-* **list-style**: none This removes to bullet icon for each list item
+* **list-style-type**: none This removes to bullet icon for each list item
 * **display: flex**  In this situation we are using it to cause the list items to flow from left to right across the available space.
-* **padding-left:0px** The default style for lists indents them from the left.
+* **padding:0** The default style for lists indents them from the left.
+* **margin:0** Remove the default margin.
 
 * set the font weight to bold for the list items.
 
@@ -343,6 +311,54 @@ The modifications to the footer are similar to those for the article grid, just 
 ![](https://raw.githubusercontent.com/hoc-labs/images/main/news-site-progression-article-grid-13.png)
 
 
+## Solutions
+
+### Topic Pills
+
+```html
+<span class="topic topic-science">Science</span>
+```
+
+```css
+.topic-sports {
+  background-color: var(--sports-color);
+}
+.topic-arts {
+  background-color: var(--arts-color);
+}
+.topic-technology {
+  background-color: var(--tech-color);
+}
+.topic-food {
+  background-color: var(--food-color);
+}
+.topic-science {
+  background-color: var(--science-color);
+}
+```
+### Showcase Background Image
+The background property has the following values that we will set:
+* url(the location of the image)
+* center/cover - cover tells the browser to make sure the image always covers the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
+
+Like the border property, you can use the background property and combine multiple properties, or set each individual, such as background-image, background-repeat, background-position, background-size...
+```css
+.showcase {
+  background: url('../images/robot.jpg') center/cover;
+}
+```
+
+### Showcase Article Summary Content
+```html
+<span class="topic topic-technology">Technology</span>
+ <h1>An Article About Technology</h1>
+  <p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+  recusandae consequatur similique doloribus. Corporis, et a ullam
+  praesentium facere veritatis veniam? Aperiam ipsa totam veniam,
+  atque illo sed suscipit accusamus.
+  </p>
+```
 
 
 
